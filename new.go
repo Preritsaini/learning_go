@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	//fmt.Println("Variables")
 	//var fruitList [4]string
@@ -64,12 +62,13 @@ func main() {
 	//	fmt.Println("Value of dice is default")
 	//
 	//}
-	greeter()
+	//greeter()
 
 }
-func greeter() {
-	fmt.Println("Hello World")
-}
+
+//func greeter() {
+//	fmt.Println("Hello World")
+//}
 
 //type User struct {
 //	Name   string
