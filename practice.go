@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
 )
 
 type course struct {
@@ -15,7 +16,8 @@ type course struct {
 
 func main() {
 	//EncodeJson()
-	decodeJson()
+	//decodeJson()
+
 }
 func EncodeJson() {
 	lcoCources := []course{
@@ -30,22 +32,29 @@ func EncodeJson() {
 	}
 	fmt.Printf(string(finalJson))
 }
-func decodeJson() {
-	jsonData := []byte(`
-		{
-			"userId": 1,
-			"id": 1,
-			"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-			"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-		}
-	`)
 
-	var post Post
-	err := json.Unmarshal(jsonData, &post)
-	if err != nil {
-		fmt.Println("Error decoding JSON:", err)
-		return
-	}
+//func decodeJson() {
+//	jsonData := []byte(`
+//		{
+//			"userId": 1,
+//			"id": 1,
+//			"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//			"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+//		}
+//	`)
 
-	fmt.Printf("Decoded JSON:\n%+v\n", post)
+//		var post Post
+//		err := json.Unmarshal(jsonData, &post)
+//		if err != nil {
+//			fmt.Println("Error decoding JSON:", err)
+//			return
+//		}
+//
+//		fmt.Printf("Decoded JSON:\n%+v\n", post)
+//	}
+func grwwter() {
+	fmt.Println("welcome")
+}
+func serveHome(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("<h1>Welcome to the home page!</h1>"))
 }
